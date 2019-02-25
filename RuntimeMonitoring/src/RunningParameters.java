@@ -50,7 +50,7 @@ public class RunningParameters implements Serializable{
 							  long epsilon,
 							  String destinationDistributionString,
 							  String queryString,
-							  String causalityClockString, 
+							  String causalityClockString,
 							  String ntpTypeString,
 							  double beta) {
 		this.numberOfMembers = numberOfMembers;

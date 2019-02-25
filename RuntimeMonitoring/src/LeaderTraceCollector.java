@@ -14,12 +14,10 @@ import com.microsoft.z3.IntExpr;
 import com.microsoft.z3.Model;
 import com.microsoft.z3.Solver;
 import com.microsoft.z3.Status;
-
 import java.time.Duration;
 import java.time.Instant;
 
 public class LeaderTraceCollector {
-
 	public LeaderTraceCollector(int numProcesses, Instant initialL) {
 		this.globalTrace = new ArrayList<>();
 	    this.globalMsgTraces = new ArrayList<>();	    

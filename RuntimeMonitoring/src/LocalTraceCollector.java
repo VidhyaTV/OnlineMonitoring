@@ -20,7 +20,7 @@ public class LocalTraceCollector implements Serializable {//contains local Trace
 		hvcSizeOverEpsilonNumEvents = new ArrayList<>();
         hvcSizeOverTimeDomain = new ArrayList<>();
         hvcSizeOverEpsilonDomain = new ArrayList<>();
-        hvcSizeHistogram = new int[numberOfMembers+1];
+        hvcSizeHistogram = new int[numberOfMembers+1
         */
         messageSizes = new ArrayList<>();
         /*removing hvc size computing code
@@ -103,7 +103,6 @@ public class LocalTraceCollector implements Serializable {//contains local Trace
 		numSentMessages++;
 		long messagesSize = SimpleMessageUtilities.getOobMessage(leader, new Packet(MessageType.NORMAL_RECEIVE,e.localCausalityClock)).size();
 		messageSizes.add(messagesSize);
-
 	}*/
 	
 	public void pushLocalTraceReceive(LocalEvent e) {

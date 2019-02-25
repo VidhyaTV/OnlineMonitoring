@@ -18,7 +18,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.Duration;
 
-
 public class SimpleMessagePassing extends ReceiverAdapter {
 	 
 	@SuppressWarnings("resource")
@@ -97,7 +96,7 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 							localClock.print();
 							localClock.timestampReceiveEvent(t);
 							System.out.println("After receive");
-							localClock.print(); */ 
+							localClock.print(); */
 							//System.out.println("elapsedTimeSinceReport in nanos:"+elapsedTimeSinceReport.toNanos());
 							if(Duration.between(lastReportTime, currentTime).toNanos()/1000 > parameters.globalEpsilon) //only if duration of run is not yet done
 							{
@@ -335,7 +334,6 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 		System.out.println("usage3: exit");
 	}
 	private boolean correctFormat(String[] cmd) {
-		
 		boolean lengthEqual11 = cmd.length == 11;
 		if(!lengthEqual11) { 
 			System.out.println("Incorrect number of parameters.");
@@ -669,7 +667,7 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 				case SETUP_NORMAL_RUN:
 					 nonLeaderSetup(); 
 					 System.out.println("SETUP FOR NORMAL RUN READY: My index is " + Integer.toString(myIndexOfTheGroup));
-					 initL = parameters.startTime.toInstant().plusMillis(parameters.duration+5*1000);  
+					 initL = parameters.startTime.toInstant().plusMillis(parameters.duration+5*1000);
 					 //lastL = initL.plusMillis(parameters.duration);
 					 SimpleMessageUtilities.waitUntil(Date.from(initL));
 					 initTime  = Instant.now();
@@ -716,7 +714,6 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 				    	}
 				    }
 				    //System.out.println("X:"+this.x);
-				    
 					if(sendMessage) 
 					{
 						int destination = parameters.nextDestination();
@@ -795,7 +792,7 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 				    	continue;
 				    	
 				case FINISH_NORMAL_RUN :
-					localClock.timestampLocalEvent(); 
+					localClock.timestampLocalEvent();
 					localTraceCollector.pushLocalTrace(new LocalEvent(EventType.STOP,localClock, localClock.getL(),x));
 
 					//System.out.println("Printing event at process:"+myIndexOfTheGroup);
@@ -844,7 +841,7 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 					//lastReportTime=Instant.now();
 					lastReportTime=lastReportTime.plusNanos(parameters.globalEpsilon*1000);
 					System.out.println("Updated lastReportTime:"+lastReportTime.toEpochMilli());
-					continue; 
+					continue;
 				case STOP: 
 					 
 				default:
@@ -941,8 +938,6 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 		return false;
 	}
 	
-	
-	
 	public static void main(String[] args) throws Exception { 
 		   
 		for(int i=0; i < args.length; i++) {
@@ -965,7 +960,6 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 		System.setProperty("java.net.preferIPv4Stack", "true");
 		new SimpleMessagePassing().start();	
 	}
-	
 	Timestamp localClock;
 	
 	JChannel channel;
@@ -973,7 +967,6 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 	
 	private int numWorkers;
 	private Vector<Double> globalNtpOffset;
-		
 	private int myIndexOfTheGroup;
 	private boolean x;
 	private Instant trueUntil;
@@ -990,7 +983,6 @@ public class SimpleMessagePassing extends ReceiverAdapter {
 	private RunningParameters parameters; 
 	private FileWriter outputLog;
 	private String outputFilename;
-	
 	//private ConcurrentHashMap<String,LocalTraceCollector> leaderBuffer;
 	private LeaderBuffer leaderBuffer;
 	//private LeaderBuffer leaderBufferProcessed;

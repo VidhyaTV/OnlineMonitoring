@@ -15,7 +15,6 @@ public enum LocalState {
 	GET_INTERNET_NTP,
 	GET_AMAZON_NTP,
 	GET_LATENCY,
-	
 	STOP,
 	REPORT_WINDOW
 }

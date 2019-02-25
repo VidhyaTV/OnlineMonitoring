@@ -15,6 +15,6 @@ public class LocalEvent implements Serializable {
 	}
 	public final EventType eventType; 
 	public final Timestamp localCausalityClock;
-	public final Instant localWallClock;  
+	public final Instant localWallClock;
 	public final boolean x;
 }

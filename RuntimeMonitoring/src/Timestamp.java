@@ -187,11 +187,11 @@ public class Timestamp implements java.io.Serializable {
 	private void timestampLocalEventHLC() {
 		if(type == TimestampType.NO_TIMESTAMP) return;
 		timestampSendEventHLC();
-	} 
+	}
 	private void timestampLocalEventHLC(Instant currentTime) {//version where instant is provided
 		if(type == TimestampType.NO_TIMESTAMP) return;
 		timestampSendEventHLC(currentTime);
-	} 
+	}
 	private void printHLC() {
 		if(type == TimestampType.NO_TIMESTAMP) return;
 		System.out.println("(L,C) = (" + l + "," + Long.toString(c) +")");

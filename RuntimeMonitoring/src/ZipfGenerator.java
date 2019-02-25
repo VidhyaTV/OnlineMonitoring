@@ -20,6 +20,7 @@ public class ZipfGenerator {
  
  // the next() method returns an random rank id.
  // The frequency of returned rank ids follow Zipf distribution.
+
  public int next() {
    int rank;
    double frequency = 0;
